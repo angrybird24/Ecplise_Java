@@ -1,0 +1,38 @@
+package Package1;
+
+import java.util.Scanner;
+
+public class Class1 {
+	public static void main(String[] args) { 
+		System.out.println("hello World");
+		
+		
+		
+//		2-1
+		
+		
+//		2-2
+//		Scanner sc = new Scanner(System.in);
+//		int regNo = sc.nextInt();
+//		System.out.println(regNo);
+		
+//		2-3
+//		100 , 100L , 3.14f
+//		i, l , PI
+//		int , long , final
+//		final
+		
+		
+//		2-4
+//		b
+		
+//		12
+//		true
+//		13
+//		51
+//		99
+		
+		System.out.println('J'+"ava");
+		
+	}
+}

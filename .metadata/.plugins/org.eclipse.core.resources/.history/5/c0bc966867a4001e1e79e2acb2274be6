@@ -1,0 +1,163 @@
+package CARLOS1;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+
+public class Test1 extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	public static int CK_WordCng = 0;
+	private JTextArea WC_L_TF_1;
+	private JTextArea WC_L_TF_2;
+	private JTextField WC_L_TF_3;
+	private JTextField WC_L_TF_4;
+	private JScrollPane WC_L_SP_1;
+	private JScrollPane WC_L_SP_2;
+	private JLabel WC_L_INFO_1;
+	private JLabel WC_L_INFO_2;
+	private JLabel WC_L_INFO_3;
+	private JButton WC_B_1;
+	private String WC_L_TF_1_Text;
+	private String WC_L_TF_2_Text;
+	private JButton button;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Test1 frame = new Test1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public Test1() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setBounds(100, 100, 720, 1280); //갤럭시 S2, HD갤럭시 S3 ,갤럭시 노트2 사이즈
+		setBounds(0, 0, 1400, 1000);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JPanel panel = new JPanel();
+		panel.setBounds(59, 46, 214, 70);
+		contentPane.add(panel);
+		panel.setLayout(null);
+
+		JButton m_WordCngBtn = new JButton("글자 변경");
+		m_WordCngBtn.setFont(new Font("맑은 고딕", Font.BOLD, 20));
+		m_WordCngBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				m_WordCngBtn.setText("글자 변경 선택됨");
+				CK_WordCng += 1;
+				if (CK_WordCng > 1) {
+					CK_WordCng = 0;
+					m_WordCngBtn.setText("글자 변경");
+				}
+			}
+		});
+
+		if (CK_WordCng == 1) {
+
+		}
+
+		m_WordCngBtn.setBounds(0, 0, 214, 70);
+		panel.add(m_WordCngBtn);
+
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(255, 0, 0), 3, true));
+		panel_1.setBounds(140, 500, 1100, 400);
+		contentPane.add(panel_1);
+
+		WC_L_TF_1 = new JTextArea();
+		WC_L_TF_1.setBounds(1, 1, 501, 143);
+		panel_1.add(WC_L_TF_1);
+
+		WC_B_1 = new JButton("변경 실행");
+		WC_B_1.setBounds(938, 32, 150, 343);
+		panel_1.add(WC_B_1);
+		WC_B_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String input_Text = WC_L_TF_1.getText();   
+				input_Text = input_Text.replaceAll(WC_L_TF_3.getText() ,WC_L_TF_4.getText());
+				WC_L_TF_2.setText(input_Text);
+			}
+		});
+		panel_1.setLayout(null);
+
+		WC_L_SP_1 = new JScrollPane(WC_L_TF_1);
+		WC_L_SP_1.setBounds(20, 50, 503, 145);
+		panel_1.add(WC_L_SP_1);
+
+		WC_L_TF_2 = new JTextArea();
+		WC_L_TF_2.setColumns(10);
+		WC_L_TF_2.setBounds(20, 245, 503, 145); 
+
+		WC_L_SP_2 = new JScrollPane(WC_L_TF_2);
+		WC_L_SP_2.setBounds(20, 245, 503, 145);
+		panel_1.add(WC_L_SP_2);
+
+		WC_L_INFO_1 = new JLabel("문자열 전체 입력창");
+		WC_L_INFO_1.setBounds(10, 10, 250, 30);
+		WC_L_INFO_1.setFont(new Font("한컴 고딕", Font.BOLD, 15));
+		panel_1.add(WC_L_INFO_1);
+
+		WC_L_INFO_2 = new JLabel("결과 창");
+		WC_L_INFO_2.setBounds(10, 210, 250, 30);
+		WC_L_INFO_2.setFont(new Font("한컴 고딕", Font.BOLD, 15));
+		panel_1.add(WC_L_INFO_2);
+
+		WC_L_INFO_3 = new JLabel("변경할 문자 입력");
+		WC_L_INFO_3.setBounds(549, 32, 171, 15);
+		WC_L_INFO_3.setFont(new Font("한컴 고딕", Font.BOLD, 15));
+		panel_1.add(WC_L_INFO_3);
+
+		WC_L_TF_3 = new JTextField();
+		WC_L_TF_3.setBounds(543, 59, 221, 32);
+		panel_1.add(WC_L_TF_3);
+		WC_L_TF_3.setColumns(10);
+
+		WC_L_TF_4 = new JTextField();
+		WC_L_TF_4.setBounds(543, 141, 221, 32);
+		WC_L_TF_4.setColumns(10);
+		panel_1.add(WC_L_TF_4);
+
+		JLabel lblNewLabel_2_1 = new JLabel("변경되려는 문자열");
+		lblNewLabel_2_1.setBounds(549, 114, 171, 15);
+		lblNewLabel_2_1.setFont(new Font("한컴 고딕", Font.BOLD, 15));
+		panel_1.add(lblNewLabel_2_1);
+		
+		button = new JButton("초기화");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button.setFont(new Font("한컴 고딕", Font.PLAIN, 30));
+		button.setBounds(777, 32, 150, 150);
+		panel_1.add(button);
+		String lblNewLabel_2_1_Text = lblNewLabel_2_1.getText();
+
+		setLocationRelativeTo(null);
+
+	}
+}

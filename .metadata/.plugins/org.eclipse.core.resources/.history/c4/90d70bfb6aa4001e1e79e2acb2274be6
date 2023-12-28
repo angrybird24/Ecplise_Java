@@ -1,0 +1,56 @@
+package Package1;
+
+import java.util.Scanner;
+
+public class Class1 {
+	public void static  main(String[] arv) { 
+		System.out.println("hello World");
+		
+		
+		
+//		2-1
+//			 1byte  2byte 3byte 4byte
+//		논리형    v
+//		문자형 		  v
+//		정수형  byte  short  int  long
+//		실수형	             float double
+		
+//		2-2
+//		Scanner sc = new Scanner(System.in);
+//		int regNo = sc.nextInt();
+//		System.out.println(regNo);
+		
+		
+//		2-3
+//		100 , 100L , 3.14f
+//		i, l , PI
+//		int , long , final
+//		final
+		
+		
+//		2-4
+//		b
+		
+		
+//		2-5
+//		12
+//		true
+//		13
+//		51
+//		99
+//		Java
+//		오류  
+		
+		
+//		2-6
+//		b,c,
+		
+		
+		
+//		2-11
+//		a,b,c,d
+		
+//		2-12
+//		a , b , c 
+	}
+}
